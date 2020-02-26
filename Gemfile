@@ -68,3 +68,12 @@ group :development do
   gem 'rails-erd'
   gem 'puma-ngrok-tunnel'
 end
+
+gem 'slim-rails'
+gem 'active_interaction'
+gem 'browser'
+gem 'sitemap_generator'
+gem 'whenever', require: false
+gem 'dotenv-rails'
+gem 'uglifier', '>= 1.3.0'
+gem 'simple_form'

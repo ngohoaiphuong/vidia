@@ -31,5 +31,15 @@ module Vivian
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    # my config ---------------------------------------------------------------
+    config.time_zone = 'Asia/Bangkok'
+    config.active_record.default_timezone = :utc
+    config.encoding = 'utf-8'
+    config.generators do |g|
+      g.template_engine :slim
+    end    
+
+    config.autoload_paths += Dir.glob("#{config.root}/app/interactions/*")
+    config.active_storage.variant_processor = :vips
   end
 end
