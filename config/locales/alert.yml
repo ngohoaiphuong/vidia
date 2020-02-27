@@ -1,0 +1,8 @@
+vi:
+  alert:
+    titles:
+      error: Báo lỗi từ hệ thống
+en:
+  alert:
+    titles:
+      error: Warning from system

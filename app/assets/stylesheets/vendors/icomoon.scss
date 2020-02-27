@@ -1,0 +1,243 @@
+$icomoon-font-family: "icomoon" !default;
+$icomoon-font-path: "icomoon" !default;
+
+@font-face {
+  font-family: 'icomoon';
+  src:  asset_url('icomoon/icomoon.eot?90k02s');
+  src:  asset_url('icomoon/icomoon.eot?90k02s#iefix') format('embedded-opentype'),
+    asset_url('icomoon/icomoon.ttf?90k02s') format('truetype'),
+    asset_url('icomoon/icomoon.woff?90k02s') format('woff'),
+    asset_url('icomoon/icomoon.svg?90k02s#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+// [class^="icon-"], [class*=" icon-"] {
+.icomoon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size: 20px;
+  vertical-align: middle;  
+}
+
+.icomoon {
+  &.icon-4x {
+    font-size: 4em;
+  }
+
+  &.icon-website {
+    &:before {
+      content: "\e91e";
+    }
+  }
+  
+  &.icon-smartphone {
+    &:before {
+      content: "\e91f";
+    }
+  }
+  
+  &.icon-bar {
+    &:before {
+      content: "\e920";
+    }
+  }
+  
+  &.icon-bipolar {
+    &:before {
+      content: "\e921";
+    }
+  }
+  
+  &.icon-solution {
+    &:before {
+      content: "\e922";
+    }
+  }
+  
+  &.icon-coins {
+    &:before {
+      content: "\e923";
+    }
+  }
+  
+  &.icon-trophy {
+    &:before {
+      content: "\e924";
+    }
+  }
+  
+  &.icon-medal {
+    &:before {
+      content: "\e900";
+    }
+  }
+  
+  &.icon-conversation {
+    &:before {
+      content: "\e917";
+    }
+  }
+  
+  &.icon-target {
+    &:before {
+      content: "\e918";
+    }
+  }
+  
+  &.icon-consumer {
+    &:before {
+      content: "\e919";
+    }
+  }
+  
+  &.icon-customers {
+    &:before {
+      content: "\e91a";
+    }
+  }
+  
+  &.icon-crm {
+    &:before {
+      content: "\e91b";
+    }
+  }
+  
+  &.icon-team {
+    &:before {
+      content: "\e91c";
+    }
+  }
+  
+  &.icon-employee {
+    &:before {
+      content: "\e91d";
+    }
+  }  
+
+  &.icon-admin {
+    &:before {
+      content: "\e901";
+    }
+  }
+  
+  &.icon-business-team-leader1 {
+    &:before {
+      content: "\e902";
+    }
+  }
+  
+  &.icon-target {
+    &:before {
+      content: "\e903";
+    }
+  }
+  
+  &.icon-sales-admin {
+    &:before {
+      content: "\e904";
+    }
+  }
+  
+  &.icon-personnel {
+    &:before {
+      content: "\e905";
+    }
+  }
+  
+  &.icon-collaborator {
+    &:before {
+      content: "\e906";
+    }
+  }
+  
+  &.icon-marketer {
+    &:before {
+      content: "\e907";
+    }
+  }
+  
+  &.icon-maintenance {
+    &:before {
+      content: "\e908";
+    }
+  }
+  
+  &.icon-cs {
+    &:before {
+      content: "\e909";
+    }
+  }
+  
+  &.icon-coordinator {
+    &:before {
+      content: "\e90a";
+    }
+  }
+  
+  &.icon-accountant-male {
+    &:before {
+      content: "\e90b";
+    }
+  }
+  
+  &.icon-chief-accountant {
+    &:before {
+      content: "\e90c";
+    }
+  }
+  
+  &.icon-accountant {
+    &:before {
+      content: "\e90d";
+    }
+  }
+  
+  &.icon-chief-technical {
+    &:before {
+      content: "\e90e";
+    }
+  }
+  
+  &.icon-supervision {
+    &:before {
+      content: "\e90f";
+    }
+  }
+  
+  &.icon-technical {
+    &:before {
+      content: "\e910";
+    }
+  }
+  
+  &.icon-sale {
+    &:before {
+      content: "\e911";
+    }
+  }  
+
+  &.icon-partner {
+    &:before {
+      content: "\e912";
+    }
+  }    
+
+  &.icon-business-team-leader {
+    &:before {
+      content: "\e913";
+    }
+  }    
+}

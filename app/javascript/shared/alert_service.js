@@ -32,7 +32,7 @@ function alertWarning(title, message, callback) {
 
 function alertError(message) {
   swal({
-    title: I18n.t('common.titles.error'),
+    title: I18n.t('alert.titles.error'),
     text: message,
     icon: 'error',
     dangerMode: true

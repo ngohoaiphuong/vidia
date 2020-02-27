@@ -74,7 +74,7 @@
     })
   }
 
-  $.vivian = {
+  $.buymed = {
     init: function() {
       onScroll()
       onCircularMenu()
