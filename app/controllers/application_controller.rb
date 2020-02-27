@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :set_variant
+  before_action :set_variant, :set_current_account, :check_secure_account
   layout :detect_layout
 
   respond_to :html, :js
@@ -42,4 +42,13 @@ class ApplicationController < ActionController::Base
 
     'application'
   end
+
+  def set_current_account
+    @current_account = current_account || nil
+  end
+
+  def check_secure_account
+    ActionClient.must_change_password(current_account.id) if current_account && !current_account.secure?
+  end
+
 end

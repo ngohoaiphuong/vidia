@@ -18,6 +18,7 @@
 #  reset_password_token   :string
 #  secure                 :boolean          default(FALSE)
 #  sign_in_count          :integer          default(0), not null
+#  slug                   :string
 #  unlock_token           :string
 #  username               :string
 #  created_at             :datetime         not null
@@ -28,14 +29,26 @@
 #  index_accounts_on_deleted_at            (deleted_at)
 #  index_accounts_on_email                 (email) UNIQUE
 #  index_accounts_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_accounts_on_slug                  (slug) UNIQUE
 #
 
 class Account < ApplicationRecord
+  extend FriendlyId
   has_logidze
   rolify
   acts_as_paranoid
+  friendly_id :username, use: :slugged  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable, :lockable
+
+  default_scope { order(:created_at) }
+  
+  attr_writer :signin_by
+  has_many :action_managements, dependent: :destroy
+
+  def signin_by
+    @signin_by || username || phone_number || email
+  end       
 end

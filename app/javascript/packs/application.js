@@ -6,6 +6,9 @@ require('channels')
 import 'controllers'
 import '../customs/bootstrap'
 import '../customs/offline'
+import '../customs/sweetAlertConfirm'
+import '../customs/buymed'
+import '../customs/respondModal'
 
 document.addEventListener('DOMContentLoaded', function() {
 })
