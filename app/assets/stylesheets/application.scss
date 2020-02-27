@@ -1,3 +1,9 @@
 @charset "UTF-8";
 
-@import './views/main';
+@import './base/colors';
+
+@import './views/common';
+
+@import './vendors/bootstrap';
+
+@import './components/pagy-nav';

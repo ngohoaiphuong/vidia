@@ -1,0 +1,44 @@
+$c-jade:      #00b46e;
+$c-sun:       #f9b514;
+$c-facebook:  #3b5998;
+$c-email:     #DC4E41;
+$c-zalo:      #0f8edd;
+$c-blue-haze: #C3CCDC;
+$c-blue-chill:#138496;
+$c-background-transparent: rgba(255, 255, 255, 0.96);
+
+$c-regent-gray: #919AA3;
+$c-punch:   #dc3545;
+$c-white:   #ffffff;
+$c-link-water:  #f4f7fc;
+$c-pistachio: #9AC100;
+$c-hot-pink: #FF4FAE;
+
+// https://github.com/twbs/bootstrap-rubygem/blob/master/assets/stylesheets/bootstrap/_variables.scss
+// Override bootstrap colors
+$red:     #dc3545 !default;
+$primary:   $c-jade !default;
+$secondary: $c-sun !default;
+$error:     $red !default;
+$body-bg: #f4f7fc !default;
+$black:     $c-regent-gray !default;
+
+$red:       $c-punch !default;
+$white:     $c-white !default;
+$black:     $c-regent-gray !default;
+$primary:   $c-jade !default;
+$secondary: $c-sun !default;
+$error:     $red !default;
+
+// ==========================================
+// Buymed color declaration starts below
+$border-color: rgba($c-blue-haze, .4);
+$boderColor: rgba(0, 0, 0, .125);
+$textColor: #343a40;
+$mainBg: linear-gradient(102.04deg, $primary 0%, #9AC100 100%);
+
+$notificationColor: #919AA3;
+$emptyNotificationColor: #FF4FAE;
+$currentColor: $secondary;
+
+$footerBg: #333333 !default;

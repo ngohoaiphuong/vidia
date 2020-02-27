@@ -1,0 +1,17 @@
+vi:
+  pagy:
+    item_name: "Kết quả"
+
+    nav:
+      prev: "<i class='fas fa-arrow-left'></i>"
+      next: "<i class='fas fa-arrow-right'></i>"
+      gap: "&hellip;"
+
+    info:
+      no_items: "Không tìm thấy %{item_name}"
+      single_page: "Hiển thị <b>%{count}</b> %{item_name}"
+      multiple_pages: "Hiển thị %{item_name} <b>%{from}-%{to}</b> trên tổng số <b>%{count}</b>"
+
+    combo_nav_js: "Trang %{page_input}/%{pages}"
+
+    items_selector_js: "Hiển thị %{items_input} %{item_name} mỗi trang"

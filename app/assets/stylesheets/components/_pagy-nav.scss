@@ -1,0 +1,29 @@
+.pagy-nav {
+  --pagy-width: 2em;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .page {
+    background-color: white;
+    color: $notificationColor;
+
+    text-align: center;
+    font-weight: 500;
+    line-height: var(--pagy-width);
+
+    min-width: var(--pagy-width);
+    min-height: var(--pagy-width);
+    border-radius: 40px;
+    margin: 0.5rem;
+
+    &.disabled {
+    }
+
+    &.active {
+      background: $mainBg;
+      color: white;
+    }
+  }
+}

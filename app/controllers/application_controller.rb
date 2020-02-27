@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
+
+  around_action :set_locale
   before_action :set_variant, :set_current_account, :check_secure_account
+
   layout :detect_layout
 
   respond_to :html, :js
@@ -11,6 +15,11 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  def set_locale(&action)
+    locale = params[:locale] || I18n.default_locale || :vi
+    I18n.with_locale(locale, &action)
+  end
+
   def set_variant
     response.set_header('vary', 'User-Agent')
 

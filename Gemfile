@@ -92,3 +92,6 @@ gem 'cancancan'
 gem 'paranoia', '~> 2.2'
 gem 'globalid'
 gem 'friendly_id', '~> 5.2.4'
+
+gem 'rest-client'
+gem 'pagy'
