@@ -1,0 +1,11 @@
+vi:
+  serviceworks:
+    offline:
+      title: Internet của bạn đang bị mất kết nối.
+      description: Bạn cần kết nối lại WiFi trước khi tiếp tục.
+
+en:
+  serviceworks:
+    offline:
+      title: Internet của bạn đang bị mất kết nối.
+      description: Bạn cần kết nối lại WiFi trước khi tiếp tục.
