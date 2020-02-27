@@ -28,6 +28,12 @@ development:
     password: <%= ENV['PELO_CONVERSATION_DATABASE_PASSWORD'] %>
     migrations_paths: db/conversation_migrate
     database: vivian_conversation
+  general:
+    <<: *default
+    username: <%= ENV['PELO_GENERAL_DATABASE_USERNAME'] %>
+    password: <%= ENV['PELO_GENERAL_DATABASE_PASSWORD'] %>
+    migrations_paths: db/general_migrate
+    database: vivian_general
 
 test:
   <<: *default
