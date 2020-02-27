@@ -1,0 +1,27 @@
+meta[charset='utf-8']
+
+title
+ = meta_title
+
+meta[name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no']
+meta[name='description' content=meta_description]
+meta[name='robots' content=meta_robots]
+meta[name='msapplication-TileColor' content='#ffffff']
+meta[name='msapplication-TileImage' content='/icons/ms-icon-144x144.png']
+meta[name='apple-mobile-web-app-title' content='pelo.vn']
+meta[name='apple-mobile-web-app-capable' content='yes']
+
+/ Change the color of the browser bar
+meta[name='theme-color' content='#ffffff']
+meta[name='msapplication-navbutton-color' content='#ffffff']
+meta[name='apple-mobile-web-app-status-bar-style' content='#ffffff']
+
+link[rel='canonical' href=(canonical_url)]
+link[rel='manifest preload' href='/manifest.json']
+link[rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i&display=swap']
+
+= render 'layouts/partials/favicon'
+
+= open_graph
+= csrf_meta_tags
+= csp_meta_tag

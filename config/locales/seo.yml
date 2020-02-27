@@ -1,0 +1,15 @@
+vi:
+  seo:
+    default:
+      title: Vivian
+      short_title: Vivian
+      website_name: Vivian
+      description: Ứng dụng quản lý thông tin
+
+en:
+  seo:
+    default:
+      title: Vivian
+      short_title: Vivian
+      website_name: Vivian
+      description: Application for management information
