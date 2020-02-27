@@ -64,5 +64,6 @@ Rails.application.configure do
   config.active_job.queue_adapter = :sidekiq
   config.hosts << /[a-z0-9]+\.ngrok\.io/
   config.action_mailer.delivery_method = :letter_opener
-  config.action_mailer.perform_deliveries = true  
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

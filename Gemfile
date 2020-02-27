@@ -44,6 +44,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
 # ------------------------------ Add by team -------------------------------------------
 gem 'redis', '~> 4.0'
 gem 'sidekiq'
@@ -77,3 +78,17 @@ gem 'whenever', require: false
 gem 'dotenv-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'simple_form'
+gem 'i18n-js'
+
+# webpush notificaton from serviceworker
+gem 'webpush'
+# Routes
+gem 'js-routes'
+
+gem 'logidze'
+gem 'devise'
+gem 'rolify'
+gem 'cancancan'
+gem 'paranoia', '~> 2.2'
+gem 'globalid'
+gem 'friendly_id', '~> 5.2.4'

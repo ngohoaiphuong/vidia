@@ -5,6 +5,7 @@ require('channels')
 
 import 'controllers'
 import '../customs/bootstrap'
+import '../customs/offline'
 
 document.addEventListener('DOMContentLoaded', function() {
 })

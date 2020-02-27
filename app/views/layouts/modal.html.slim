@@ -1,0 +1,13 @@
+.modal.fade[tabindex='-1' role='dialog' data-controller='modal']
+  .modal-dialog[role='document' class=yield(:class) style=yield(:style)]
+    .modal-content
+      .modal-header
+        header.modal-title.text-capitalize
+          = yield :title if content_for? :title
+        
+        button.close[type='button' data-dismiss='modal' aria-label='Close']
+          span[aria-hidden='true']
+            i.fas.fa-times
+
+      .modal-body
+        = yield
