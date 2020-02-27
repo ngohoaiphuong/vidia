@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_02_27_100708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "action_managements", force: :cascade do |t|
+    t.integer "account_id"
+    t.integer "action"
+    t.boolean "sent", default: false
+    t.boolean "received", default: false
+    t.integer "sent_counter", default: 0
+    t.string "targets", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end

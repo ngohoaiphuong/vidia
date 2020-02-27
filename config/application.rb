@@ -43,3 +43,14 @@ module Vivian
     config.active_storage.variant_processor = :vips
   end
 end
+
+module MyI8n
+  LOCALES = %w[vi en].freeze
+
+  class Application < Rails::Application
+    config.i18n.available_locales = MyI8n::LOCALES
+    config.i18n.locale = :vi
+    config.i18n.default_locale = :vi
+    # config.i18n.fallbacks = (['vi'] + MyI8n::LOCALES).uniq
+  end
+end
