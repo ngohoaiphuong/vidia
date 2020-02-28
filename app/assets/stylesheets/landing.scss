@@ -1,3 +1,84 @@
-// Place all the styles related to the landing controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@charset "UTF-8";
+
+@import './base/colors';
+
+@import './views/common';
+
+@import './vendors/bootstrap';
+@import './vendors/font-awesome';
+@import './vendors/icomoon';
+@import './vendors/simple_form-bootstrap';
+
+body {
+  overflow: hidden;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2.6rem;
+  -webkit-font-smoothing: antialiased;  
+
+  .landing {
+    .ms-road {
+      width: 100%;
+      height: 100vh;
+      
+      background-image: asset_url('road.jpg');
+      background-size: cover;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+  
+      background-attachment: fixed;
+      &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(8, 82, 141, 0.85);
+        z-index: 0;        
+      }
+
+      .authentication {
+        --authentication-width: 80%;
+        --authentication-height: 60vh;
+
+        width: var(--authentication-width, 80%);
+        height: var(--authentication-height, 60vh);
+        margin-top: calc(var(--authentication-height, 300px)/-2);
+        margin-left: calc(var(--authentication-width, 70%)/-2);
+        
+        position: absolute;
+        top: 50%;
+        left: 50%;        
+        z-index: 100;
+        background-color: rgba(255, 255, 255,  0.6);
+        border-radius: 3px;
+
+        .authentication-container {
+          position: relative;
+          color: #ffffff;
+          width: 100%;
+          height: 100%;
+          display: inline-block;
+          &--left {
+            height: 100%;
+            width: 40%;
+            display: inline-block;
+          }
+          &--right {
+            height: 100%;
+            width: 60%;
+            display: inline-block;
+            border-left: 0.05em solid rgba(8, 82, 141, 0.85);
+          }
+        }
+      } 
+    }
+  }
+}
+

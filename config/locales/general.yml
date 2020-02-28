@@ -1,2 +1,5 @@
 vi:
   hello: "Xin chào bạn"
+
+en:
+  hello: "Hello world"
