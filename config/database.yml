@@ -9,37 +9,37 @@ development:
     username: <%= ENV['PELO_MAIN_DATABASE_USERNAME'] %>
     password: <%= ENV['PELO_MAIN_DATABASE_PASSWORD'] %>
     migrations_paths: db/migrate
-    database: vivian_development
+    database: vidian_development
   configuration:
     <<: *default
     username: <%= ENV['PELO_CONFIGURATION_DATABASE_USERNAME'] %>
     password: <%= ENV['PELO_CONFIGURATION_DATABASE_PASSWORD'] %>
     migrations_paths: db/configuration_migrate
-    database: vivian_configuration
+    database: vidian_configuration
   product:
     <<: *default
     username: <%= ENV['PELO_PRODUCT_DATABASE_USERNAME'] %>
     password: <%= ENV['PELO_PRODUCT_DATABASE_PASSWORD'] %>
     migrations_paths: db/product_migrate
-    database: vivian_product
+    database: vidian_product
   conversation:
     <<: *default
     username: <%= ENV['PELO_CONVERSATION_DATABASE_USERNAME'] %>
     password: <%= ENV['PELO_CONVERSATION_DATABASE_PASSWORD'] %>
     migrations_paths: db/conversation_migrate
-    database: vivian_conversation
+    database: vidian_conversation
   general:
     <<: *default
     username: <%= ENV['PELO_GENERAL_DATABASE_USERNAME'] %>
     password: <%= ENV['PELO_GENERAL_DATABASE_PASSWORD'] %>
     migrations_paths: db/general_migrate
-    database: vivian_general
+    database: vidian_general
 
 test:
   <<: *default
   username: <%= ENV['PELO_MAIN_DATABASE_USERNAME'] %>
   password: <%= ENV['PELO_MAIN_DATABASE_PASSWORD'] %>
-  database: vivian_test
+  database: vidian_test
 
 production:
   primary:
@@ -47,22 +47,22 @@ production:
     username: <%= ENV['PELO_MAIN_DATABASE_USERNAME'] %>
     password: <%= ENV['PELO_MAIN_DATABASE_PASSWORD'] %>
     migrations_paths: db/migrate
-    database: vivian_main
+    database: vidian_main
   configuration:
     <<: *default
     username: <%= ENV['PELO_CONFIGURATION_DATABASE_USERNAME'] %>
     password: <%= ENV['PELO_CONFIGURATION_DATABASE_PASSWORD'] %>
     migrations_paths: db/configuration_migrate
-    database: vivian_configuration
+    database: vidian_configuration
   product:
     <<: *default
     username: <%= ENV['PELO_PRODUCT_DATABASE_USERNAME'] %>
     password: <%= ENV['PELO_PRODUCT_DATABASE_PASSWORD'] %>
     migrations_paths: db/product_migrate
-    database: vivian_product
+    database: vidian_product
   conversation:
     <<: *default
     username: <%= ENV['PELO_CONVERSATION_DATABASE_USERNAME'] %>
     password: <%= ENV['PELO_CONVERSATION_DATABASE_PASSWORD'] %>
     migrations_paths: db/conversation_migrate
-    database: vivian_conversation
+    database: vidian_conversation
