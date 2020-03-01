@@ -75,6 +75,14 @@ body {
             width: 60%;
             display: inline-block;
             border-left: 0.05em solid rgba(8, 82, 141, 0.85);
+            position: relative;
+            .authentication-container-footer {
+              height: 50px;
+              width: 100%;
+              background-color: red;
+              position: absolute;
+              bottom: 0;
+            }
           }
           &--logo {
             width: 100%;
