@@ -1,5 +1,22 @@
 vi:
   hello: "Xin chào bạn"
+  days:
+    sunday: Chủ Nhật
+    monday: Thứ Hai
+    tuesday: Thứ Ba
+    wednesday: Thứ Tư
+    thursday: Thứ Năm
+    friday: Thứ Sáu
+    saturday: Thứ Bảy
+
 
 en:
   hello: "Hello world"
+  days:
+    sunday: Sunday
+    monday: Monday
+    tuesday: Tuesday
+    wednesday: Wednesday
+    thursday: Thursday
+    friday: Friday
+    saturday: Saturday

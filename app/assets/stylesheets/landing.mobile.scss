@@ -44,7 +44,7 @@ body {
       }
 
       .authentication {
-        --authentication-width: 80%;
+        --authentication-width: 100%;
         --authentication-height: 60vh;
 
         width: var(--authentication-width, 80%);
@@ -70,14 +70,18 @@ body {
           }
           &--right {
             height: 100%;
-            width: 60%;
+            width: 100%;
             border-left: 0.05em solid rgba(8, 82, 141, 0.85);
             position: relative;
             .authentication-container-welcome {
               padding: 1em;
+              h1 {
+                font-size: 2rem;
+              }
               #typewriter {
                 color: #ffffff;
                 margin: 0;
+                font-size: 1rem;
                 &:after{
                   content: '';
                   animation: blink 500ms linear infinite alternate;
@@ -90,6 +94,7 @@ body {
             .authentication-container-footer {
               height: 50px;
               width: 100%;
+              background-color: red;
               position: absolute;
               bottom: 0;
             }

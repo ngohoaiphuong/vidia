@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_27_100708) do
+ActiveRecord::Schema.define(version: 2020_03_02_072142) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "hstore"
   enable_extension "plpgsql"
 
   create_table "action_managements", force: :cascade do |t|
@@ -24,6 +25,21 @@ ActiveRecord::Schema.define(version: 2020_02_27_100708) do
     t.string "targets", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "app_settings", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.jsonb "log_data"
+  end
+
+  create_table "welcome_settings", force: :cascade do |t|
+    t.integer "day_name"
+    t.string "day_message"
+    t.integer "app_setting_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.jsonb "log_data"
   end
 
 end

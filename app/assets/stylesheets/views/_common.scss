@@ -140,4 +140,10 @@ div[id^='__lpform'] {
   display: none !important;
 }
 
+.mobiletest-html {
+  .mobiletest-div {
+    display: none !important;
+  }
+}
+
 @import './animation-delay';
