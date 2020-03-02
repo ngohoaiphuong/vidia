@@ -7,8 +7,5 @@
       .authentication-container--right.float-left
         .authentication-container-welcome
           .welcome
-            h1 Pelo xin chào buổi tối          
-            #typewriter
-              .authentication-container-welcome-message
-                | Why wouldn't you have a ColorSector model? Rails is all about convention and this is the conventional way of doing a m:m association. (You could, I guess, do a HABTM, but I never, ever use that.) – jvillian Oct 17 '19 at 14:53
+            = render partial: 'landing/welcome', locals: { welcome: @welcome }
         .authentication-container-footer

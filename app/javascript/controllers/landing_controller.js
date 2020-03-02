@@ -19,12 +19,10 @@ export default class extends Controller {
       tagOpen = false,
       typeSpeed = 80,
       tempTypeSpeed = 0;
-    console.log($('#on-mobile'))
-    if($('#on-mobile').length > 0) {
+
+    if ($('#on-mobile').length > 0) {
       typeSpeed = 60
     }
-
-    console.log(typeSpeed)
 
     let type = function () {
 

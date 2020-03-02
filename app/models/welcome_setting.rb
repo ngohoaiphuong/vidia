@@ -13,6 +13,6 @@
 class WelcomeSetting < ApplicationRecord
   has_logidze
   connects_to database: { writing: :general, reading: :general }
-  belongs_to :app_setting, dependent: :destroy
+  belongs_to :app_setting, dependent: :destroy, required: false
   store :day_message, accessors: [ :morning , :noon , :night ]
 end

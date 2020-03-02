@@ -1,5 +1,10 @@
 vi:
   hello: "Xin chào bạn"
+  welcome: 'Xin chào %{time}'
+  times:
+    morning: buổi sáng
+    noon: buổi trưa
+    night: buổi tối
   days:
     sunday: Chủ Nhật
     monday: Thứ Hai
@@ -12,6 +17,11 @@ vi:
 
 en:
   hello: "Hello world"
+  welcome: 'Good %{time}'
+  times:
+    morning: morning
+    noon: afternoon
+    night: evening
   days:
     sunday: Sunday
     monday: Monday
