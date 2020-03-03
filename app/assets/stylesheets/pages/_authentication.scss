@@ -1,0 +1,85 @@
+.form-authentication {
+  // max-width: 440px;
+  font-size: smaller;
+
+  form {
+    // max-width: 300px;
+    padding: 1em 0;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-group {
+    height: 50px;
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.08);;
+    position: relative;
+
+    &-text {
+      background-color: white;
+      padding: 0 0.75em;
+      border: none;
+      font-size: 1.5em;
+    }
+
+    input {
+      height: 50px;
+      padding-left: 40px;
+      position: relative;
+
+      &::placeholder {
+        color: $text-muted;
+        font-size: smaller;
+      }
+
+      &:before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        font-size: 15px;
+        content: '\f007';
+      }      
+    }
+
+    label {
+      padding-left: 40px;
+      height: 50px;
+      flex: 1 1 0%;
+      line-height: 40px;      
+    }
+
+    i {
+      position: absolute;
+      min-width: 46px;
+      min-height: 50px;
+      font-size: 16px;
+      padding: 16px;
+      line-height: 16px;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      color: red;
+    }
+  }
+
+  .form-control {
+    border: none;
+    &.error {
+      border: 1px solid $red;
+    }
+  }
+
+  &.signup {
+    max-width: 440px;
+
+    form {
+      max-width: 300px;
+    }
+  }
+}

@@ -1,11 +1,17 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
+  static targets = ['login_by']
   connect() {
     this.setupTypewriter().type()
   }
   disconnect() { }
-  identifier() { }
+  initialize() { }
+
+  onSubmit(event) {}
+  onClick(event) {
+    console.log(event)
+  }
 
   setupTypewriter() {
     let t = document.getElementById('typewriter')

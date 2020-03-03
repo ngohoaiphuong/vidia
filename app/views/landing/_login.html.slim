@@ -1,0 +1,28 @@
+= form_for resource, url: session_path(resource_name), html: { data: { action: 'submit->landing#onSubmit' }, autocomplete: 'off' } do |f|
+  .input-group.mb-4
+    i.fas.fa-user
+    = f.text_field :login_by,
+                    class: 'form-control',
+                    placeholder: t('authentication.phone_email'),
+                    name: 'login_by',
+                    required: false,
+                    'aria-label' => 'login_by',
+                    autofocus: true,
+                    autocapitalize: 'off',
+                    autocomplete: 'off',
+                    data: { target: 'landing.login_by' }
+
+  .input-group.mb-4
+    i.fas.fa-lock
+    = f.password_field :password,
+                        class: 'form-control',
+                        name: 'password',
+                        required: false,
+                        placeholder: t('authentication.password'),
+                        'aria-label' => 'Password',
+                        autocomplete: 'off',
+                        data: { target: 'landing.password' }
+
+  button.btn.btn-gradient.btn-block.mb-5.d-none#button-submit[type='submit']
+    = t('authentication.login')
+                      

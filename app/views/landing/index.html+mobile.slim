@@ -6,6 +6,9 @@
     .authentication-container
       .authentication-container--right
         .authentication-container-welcome
-          .welcome
-            = render partial: 'landing/welcome', locals: { welcome: @welcome }
+          = render partial: 'landing/welcome', locals: { welcome: @welcome }
+        .authentication-container-login
+          .form-authentication
+            = render 'landing/login'
         .authentication-container-footer
+          = render 'landing/actions'

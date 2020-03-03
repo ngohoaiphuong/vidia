@@ -9,6 +9,8 @@
 @import './vendors/icomoon';
 @import './vendors/simple_form-bootstrap';
 
+@import './pages/authentication';
+
 body {
   overflow: hidden;
 
@@ -46,6 +48,7 @@ body {
       .authentication {
         --authentication-width: 80%;
         --authentication-height: 60vh;
+        --authentication-welcome-height: 145px;
 
         width: var(--authentication-width, 80%);
         height: var(--authentication-height, 60vh);
@@ -75,6 +78,9 @@ body {
             position: relative;
             .authentication-container-welcome {
               padding: 1em;
+              height: var(--authentication-welcome-height, 145px);
+              min-height: var(--authentication-welcome-height, 145px);
+              max-height: var(--authentication-welcome-height, 145px);
               #typewriter {
                 color: #ffffff;
                 margin: 0;
@@ -87,17 +93,21 @@ body {
                 }                
               }
             }
+            .authentication-container-login {
+              padding: 1em;
+            }
             .authentication-container-footer {
               height: 50px;
               width: 100%;
               position: absolute;
               bottom: 0;
+              padding: 3.5px 1em;
             }
           }
           &--logo {
             width: 100%;
             height: 100%;
-            background-image: image_url('logo.png');
+            background-image: image_url('logo_.png');
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;            

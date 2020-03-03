@@ -33,6 +33,7 @@
 #
 
 class Account < ApplicationRecord
+  connects_to database: { writing: :primary, reading: :primary_replica }
   extend FriendlyId
   has_logidze
   rolify
@@ -45,10 +46,10 @@ class Account < ApplicationRecord
 
   default_scope { order(:created_at) }
   
-  attr_writer :signin_by
+  attr_writer :login_by
   has_many :action_managements, dependent: :destroy
 
-  def signin_by
-    @signin_by || username || phone_number || email
+  def login_by
+    @login_by || username || phone_number || email
   end       
 end
