@@ -1,12 +1,21 @@
-import { Controller } from "stimulus";
+import { Controller } from "stimulus"
+import I18n from 'shared/locale.js.erb'
+import { signIn } from 'shared/api_service'
+
+const _ = require('lodash')
 
 export default class extends Controller {
   static targets = ['login_by', 'password']
   connect() {
     this.setupTypewriter().type()
   }
+  
   disconnect() { }
-  initialize() { }
+
+  initialize() { 
+    this.login_byTarget.value = ''
+    this.passwordTarget.value = ''
+  }
 
   onSubmit(event) {
     console.log('----------------onSumit------------------')
@@ -14,6 +23,15 @@ export default class extends Controller {
     console.log(event)
     console.log(this.login_byTarget.value)
     console.log(this.passwordTarget.value)
+    if(_.isEmpty(this.login_byTarget.value) || _.isEmpty(this.passwordTarget.value)) {
+      window.notice.error(I18n.t('authentication.errors.missing'), () => {
+        _.isEmpty(this.login_byTarget.value) ? this.setFocus(this.login_byTarget) : this.setFocus(this.passwordTarget)
+      })  
+      return event.preventDefault()
+    }
+    
+    event.preventDefault()
+    this.signIn()
   }
 
   onClick(event) {
@@ -89,5 +107,19 @@ export default class extends Controller {
     return {
       type: type
     };
+  }
+
+  signIn() {
+    signIn($('input[name="authenticity_token"').val(), this.login_byTarget, this.passwordTarget).then(() => {
+    }).catch((error) => {
+      console.log(error)
+      window.notice.error(error.message, () => {
+        $(this.login_byTarget).focus()
+      })  
+    })
+  }
+
+  setFocus(control) {
+    $(control).addClass('error').focus()
   }
 }

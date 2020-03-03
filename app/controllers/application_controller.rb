@@ -14,6 +14,14 @@ class ApplicationController < ActionController::Base
     respond_with *args, options, &blk
   end
 
+  def after_sign_in_path_for(resource)
+    cookies[:account_id] = resource&.id.to_s
+    p '-------------------------after sign in path for------------------'
+    p resource
+    p '-----------------------------------------------------------------'
+    dashboard_index_path
+  end
+
   private
   def set_locale(&action)
     locale = params[:locale] || I18n.default_locale || :vi

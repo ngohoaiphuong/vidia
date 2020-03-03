@@ -25,7 +25,7 @@ function __post__(url, parameters) {
 function signIn(authenticity_token, username, password) {
   return __post__(Routes.account_session_path(), {
     authenticity_token: authenticity_token,
-    username: username.value,
+    login_by: username.value,
     password: password.value
   })
 }

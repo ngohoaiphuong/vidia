@@ -4,7 +4,7 @@ export class NoticeMessage {
   private content = {
     message: '',
     position: 'topRight',
-    timeout: 3000
+    timeout: 3500
   }
 
   constructor() {

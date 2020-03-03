@@ -10,6 +10,9 @@ vi:
     forgot_password: Quên mật khẩu
     login: Đăng Nhập
     next: Tiếp Tục
+    errors:
+      missing: Thiếu thông tin đăng nhập
+      password_not_match: Mật khẩu không giống nhau
 
 en:
   authentication:
@@ -23,3 +26,6 @@ en:
     forgot_password: Quên mật khẩu
     login: Đăng Nhập
     next: Tiếp Tục
+    errors:
+      missing: Thiếu thông tin đăng nhập
+      password_not_match: Mật khẩu không giống nhau

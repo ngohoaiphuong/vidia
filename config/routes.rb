@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/queues'
   mount ActionCable.server => '/cable'
 
-  devise_for :accounts
+  devise_for :accounts,
+  controllers: {
+    sessions: 'accounts/sessions'
+  }
 
   get '/serviceworker.js' => 'serviceworkers#serviceworker'
   get '/manifest.json' => 'serviceworkers#manifest'
