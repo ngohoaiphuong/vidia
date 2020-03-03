@@ -4,6 +4,7 @@
 #
 #  id           :bigint           not null, primary key
 #  action       :integer
+#  deleted_at   :datetime
 #  received     :boolean          default(FALSE)
 #  sent         :boolean          default(FALSE)
 #  sent_counter :integer          default(0)
@@ -12,8 +13,13 @@
 #  updated_at   :datetime         not null
 #  account_id   :integer
 #
+# Indexes
+#
+#  index_action_managements_on_deleted_at  (deleted_at)
+#
 
 class ActionManagement < ApplicationRecord
+  acts_as_paranoid
   connects_to database: { writing: :general, reading: :general }
   enum action: [
     :change_password,

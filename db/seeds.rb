@@ -66,3 +66,14 @@ if WelcomeSetting.count == 0
     }
   ].each { |data| WelcomeSetting.create(data) }
 end
+
+if Account.count == 0
+  Account.create(
+    email: 'admin@pelo.vn',
+    username: 'administrator',
+    phone_number: '0902574113',
+    password: PASSWORD_DEFAULT,
+    password_confirmation: PASSWORD_DEFAULT,
+    default_role: :employee 
+  ).add_role :admin
+end

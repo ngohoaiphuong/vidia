@@ -4,6 +4,7 @@
 #
 #  id           :bigint           not null, primary key
 #  address      :string
+#  deleted_at   :datetime
 #  email        :string
 #  fullname     :string
 #  phone_number :string
@@ -15,11 +16,13 @@
 #
 # Indexes
 #
-#  index_users_on_slug  (slug) UNIQUE
+#  index_users_on_deleted_at  (deleted_at)
+#  index_users_on_slug        (slug) UNIQUE
 #
 
 class User < ApplicationRecord
   has_logidze
+  acts_as_paranoid
   connects_to database: { writing: :account, reading: :account_replica }
   store :address, accessors: [ :street , :city , :district, :ward, :ref ]
   belongs_to :account, dependent: :destroy, required: false

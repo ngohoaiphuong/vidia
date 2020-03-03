@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_072142) do
+ActiveRecord::Schema.define(version: 2020_03_03_145739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -25,12 +25,16 @@ ActiveRecord::Schema.define(version: 2020_03_02_072142) do
     t.string "targets", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_action_managements_on_deleted_at"
   end
 
   create_table "app_settings", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.jsonb "log_data"
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_app_settings_on_deleted_at"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -51,6 +55,8 @@ ActiveRecord::Schema.define(version: 2020_03_02_072142) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.jsonb "log_data"
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_welcome_settings_on_deleted_at"
   end
 
 end

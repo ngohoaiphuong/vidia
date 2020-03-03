@@ -47,8 +47,12 @@ class Account < ApplicationRecord
   default_scope { order(:created_at) }
   
   attr_writer :login_by
+  attr_accessor :default_role
+
   has_many :action_managements, dependent: :destroy
   has_one :user, dependent: :destroy 
+
+  after_commit :set_role, on: [:create, :update]
 
   def login_by
     @login_by || username || phone_number || email
@@ -57,15 +61,20 @@ class Account < ApplicationRecord
   class << self
     def find_for_database_authentication(warden_conditions)
       conditions = warden_conditions.dup
-      if (username = conditions.delete(:username))
+      if (login_by = conditions.delete(:login_by))
         with_role(:employee).where(conditions.to_h).
         where([
-          'lower(phone_number) = :value OR lower(email) = :value',
-          { value: username.strip.downcase }
+          'lower(phone_number) = :value OR lower(email) = :value OR lower(username) = :value',
+          { value: login_by.strip.downcase }
         ]).first
-      elsif conditions.has_key?(:phone_number) || conditions.has_key?(:email)
+      elsif conditions.has_key?(:phone_number) || conditions.has_key?(:email) || conditions.has_key?(:username)
         with_role(:employee).where(conditions.to_h).first
       end
     end
   end    
+
+  private
+  def set_role
+    self.add_role self.default_role.to_sym if self.default_role.present?
+  end  
 end
