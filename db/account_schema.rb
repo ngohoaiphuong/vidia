@@ -10,28 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_072142) do
+ActiveRecord::Schema.define(version: 2020_03_03_141644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
   enable_extension "plpgsql"
-
-  create_table "action_managements", force: :cascade do |t|
-    t.integer "account_id"
-    t.integer "action"
-    t.boolean "sent", default: false
-    t.boolean "received", default: false
-    t.integer "sent_counter", default: 0
-    t.string "targets", default: [], array: true
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "app_settings", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.jsonb "log_data"
-  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -44,13 +27,18 @@ ActiveRecord::Schema.define(version: 2020_03_02_072142) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
-  create_table "welcome_settings", force: :cascade do |t|
-    t.integer "day_name"
-    t.string "day_message"
-    t.integer "app_setting_id"
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "phone_number"
+    t.string "address"
+    t.integer "sex"
+    t.string "fullname"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "account_id"
     t.jsonb "log_data"
+    t.string "slug"
+    t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
 end

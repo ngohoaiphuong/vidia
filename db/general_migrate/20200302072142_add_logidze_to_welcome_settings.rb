@@ -1,4 +1,4 @@
-class AddLogidzeToWelcomeSettings < ActiveRecord::Migration[5.0]
+class AddLogidzeToWelcomeSettings < ActiveRecord::Migration[6.0]
   require 'logidze/migration'
   include Logidze::Migration
 

@@ -1,4 +1,4 @@
-class LogidzeUpdate0120 < ActiveRecord::Migration[5.0]
+class LogidzeInstall < ActiveRecord::Migration[6.0]
   require 'logidze/migration'
   include Logidze::Migration
 
@@ -15,13 +15,6 @@ class LogidzeUpdate0120 < ActiveRecord::Migration[5.0]
       SQL
     end
 
-    
-    execute <<-SQL
-      DROP FUNCTION IF EXISTS logidze_version(bigint, jsonb);
-      DROP FUNCTION IF EXISTS logidze_snapshot(jsonb);
-      DROP FUNCTION IF EXISTS logidze_version(bigint, jsonb, text[]);
-      DROP FUNCTION IF EXISTS logidze_snapshot(jsonb, text[]);
-    SQL
     
 
     execute <<-SQL
@@ -233,6 +226,14 @@ class LogidzeUpdate0120 < ActiveRecord::Migration[5.0]
   end
 
   def down
+    
+    execute <<-SQL
+      DROP FUNCTION logidze_version(bigint, jsonb, timestamp with time zone, text[]) CASCADE;
+      DROP FUNCTION logidze_exclude_keys(jsonb, text[]) CASCADE;
+      DROP FUNCTION logidze_compact_history(jsonb) CASCADE;
+      DROP FUNCTION logidze_snapshot(jsonb, text, text[]) CASCADE;
+      DROP FUNCTION logidze_logger() CASCADE;
+    SQL
     
   end
 end

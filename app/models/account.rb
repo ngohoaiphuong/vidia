@@ -48,8 +48,24 @@ class Account < ApplicationRecord
   
   attr_writer :login_by
   has_many :action_managements, dependent: :destroy
+  has_one :user, dependent: :destroy 
 
   def login_by
     @login_by || username || phone_number || email
-  end       
+  end  
+
+  class << self
+    def find_for_database_authentication(warden_conditions)
+      conditions = warden_conditions.dup
+      if (username = conditions.delete(:username))
+        with_role(:employee).where(conditions.to_h).
+        where([
+          'lower(phone_number) = :value OR lower(email) = :value',
+          { value: username.strip.downcase }
+        ]).first
+      elsif conditions.has_key?(:phone_number) || conditions.has_key?(:email)
+        with_role(:employee).where(conditions.to_h).first
+      end
+    end
+  end    
 end

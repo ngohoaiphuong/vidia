@@ -1,16 +1,24 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = ['login_by']
+  static targets = ['login_by', 'password']
   connect() {
     this.setupTypewriter().type()
   }
   disconnect() { }
   initialize() { }
 
-  onSubmit(event) {}
+  onSubmit(event) {
+    console.log('----------------onSumit------------------')
+    event.preventDefault()
+    console.log(event)
+    console.log(this.login_byTarget.value)
+    console.log(this.passwordTarget.value)
+  }
+
   onClick(event) {
     console.log(event)
+    $('#button-submit').click()
   }
 
   setupTypewriter() {
