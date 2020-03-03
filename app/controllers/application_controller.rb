@@ -16,9 +16,6 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     cookies[:account_id] = resource&.id.to_s
-    p '-------------------------after sign in path for------------------'
-    p resource
-    p '-----------------------------------------------------------------'
     dashboard_index_path
   end
 

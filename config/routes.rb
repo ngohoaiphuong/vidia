@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   get '/serviceworker.js' => 'serviceworkers#serviceworker'
   get '/manifest.json' => 'serviceworkers#manifest'
   get '/offline.html' => 'serviceworkers#offline'
-  post '/push' => 'serviceworkers#push'  
+  post '/push' => 'serviceworkers#push'
+
+  resources :dashboard
 end
