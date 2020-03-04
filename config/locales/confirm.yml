@@ -1,0 +1,23 @@
+vi:
+  confirm:
+    signout: Bạn có chắc muốn đăng xuất?
+    confirmation_title: Xin xác nhận
+    ok: Có
+    cancel: Không
+    yes: Đồng Ý
+    no: Từ Chối
+    please_wait: Đang gửi...
+    delete: Bạn muốn xóa thông tin này?
+    restart: Khi restart lại, tất cả dữ liệu cũ có thể bị thay đổi! Bạn có muốn tiếp tục restart lại job này không?
+
+en:
+  confirm:
+    signout: Do you really want to sign out?
+    confirmation_title: Please confirm
+    ok: OK
+    cancel: Cancel
+    yes: Yes
+    no: No
+    please_wait: Please wait...
+    delete: Are you sure you want to delete this?
+    restart: After restart, all old data may be changed! Are you sure you want to restart this job?

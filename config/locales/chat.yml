@@ -1,0 +1,11 @@
+vi:
+  chat:
+    title: Trao đổi nhóm
+    send: Gởi
+    type_message: Nhập nội dung trao đổi ...
+
+en:
+  chat:
+    title: Direct chat
+    send: Send
+    type_message: Type message ...

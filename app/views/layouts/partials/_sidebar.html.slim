@@ -1,0 +1,18 @@
+aside.main-sidebar.sidebar-dark-primary.elevation-4.sidebar-no-expand
+  a.brand-link[href='javascript:void(0)']
+    = image_tag 'vidia/logos/manifest/logo-192x192.png', class: 'brand-image img-circle elevation-3'
+    span.brand-text.font-weight-light
+      = t('seo.default.website_name')
+  .slimScrollDiv[style='position: relative; overflow: hidden; width: auto; height: 652px;']
+    .sidebar[style='min-height: 652px; overflow: hidden; width: auto; height: 652px;']
+      .user-panel.mt-3.pb-3.mb-3.d-flex
+        .image
+          = image_tag account_avatar, class: 'img-circle elevation-2', alt: 'Account Image'
+        .info
+          a.d-block.text-capitalize[href='#']
+            = current_account
+      
+      = render 'layouts/partials/search'
+      nav.mt-2
+        ul.nav.nav-pills.nav-sidebar.flex-column.nav-compact[data-widget='treeview' role='menu' data-accordion='false' data-controller='link']
+          = render 'layouts/partials/sidebar-items'

@@ -1,0 +1,19 @@
+vi:
+  sidebar:
+    dashboard:
+      title: Bảng điều khiển
+    crm:
+      title: CRM
+      list: Danh sách khách hàng
+      care: Chăm sóc khách hàng
+      config: Cấu hình khách hàng
+
+en:
+  sidebar:
+    dashboard:
+      title: Dashboard
+    crm:
+      title: CRM
+      list: Customers
+      care: Customer Service
+      config: Customer Config

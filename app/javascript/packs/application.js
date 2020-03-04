@@ -14,6 +14,9 @@ import '../customs/buymed'
 import '../customs/respondModal'
 
 import { swRegister } from '../customs/serviceworker'
+import { NoticeMessage } from '../shared/notice_message'
+
+require('admin-lte')
 
 document.addEventListener('DOMContentLoaded', function() {
   swRegister()
@@ -21,4 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 $(document).on('turbolinks:load', function () {
   document.addEventListener('touchstart', function () { }, true)
+  
+  $.sweetAlertConfirm.init()
+  $.buymed.init()
+  $.response2Modal.init()
+
+  window.notice = new NoticeMessage()
 })

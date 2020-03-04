@@ -8,7 +8,7 @@ import 'imagesloaded'
 
 import { NoticeMessage } from '../shared/notice_message'
 
-import '../stylesheets/application'
+import '../stylesheets/landing'
 
 $(document).on('turbolinks:load', function () {
   document.addEventListener('touchstart', function () { }, true)

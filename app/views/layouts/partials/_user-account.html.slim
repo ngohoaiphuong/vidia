@@ -1,0 +1,30 @@
+a.nav-link[data-toggle='dropdown' href='javascript:void(0)']
+  = image_tag account_avatar, class: 'user-image user-circle-25', alt: 'Account Image'
+  span.text-capitalize.d-none.d-sm-inline-block
+    = current_account
+
+.dropdown-menu.dropdown-menu-lg.dropdown-menu-right
+  .card.card-widget.widget-user.mb-0
+    .widget-user-header.bg-info
+      h3.widget-user-username Card Tools
+      h5.widget-user-desc CEO
+    .widget-user-image
+      = image_tag account_avatar, class: 'img-circle elevation-2', alt: 'Account Image'
+    .card-footer
+      .d-none.d-sm-block
+        .row
+          .col-sm-6
+            a.btn.btn-secondary.btn-block[href='javascript:void(0)']
+              = t('account.profile')
+          .col-sm-6
+            = link_to destroy_account_session_path, method: :delete, data: { 'confirm': t('confirm.signout') }, class: 'btn btn-secondary btn-block'  do
+              = t('account.logout')
+      .d-sm-none
+        .row
+          .col-4
+            a.btn.btn-secondary.btn-block[href='javascript:void(0)']
+              i.fas.fa-user
+          .col-4
+          .col-4
+            = link_to destroy_account_session_path, method: :delete, data: { 'confirm': t('confirm.signout') }, class: 'btn btn-secondary btn-block'  do
+              i.fas.fa-sign-out-alt

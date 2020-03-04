@@ -3,13 +3,12 @@ html
   head
     = render 'layouts/partials/head'
 
-    / = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'js-routes'
   body.sidebar-mini.sidebar-collapse
-    #on-mobile
-    .wrapper[data-controller='application']
+    .wrapper
       = render 'layouts/partials/main-header'
       = render 'layouts/partials/sidebar'
       = render 'layouts/partials/control-sidebar'

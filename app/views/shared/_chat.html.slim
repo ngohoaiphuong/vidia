@@ -1,0 +1,122 @@
+.card.card-danger.direct-chat.direct-chat-danger[data-controller='chat']
+  .card-header
+    h3.card-title
+      = t('chat.title')
+    .card-tools
+      span.badge.badge-light[data-toggle="tooltip" title="3 New Messages"]
+        | 3
+      - if local_assigns[:enable_collapse]
+        button.btn.btn-tool[type="button" data-widget="collapse"]
+          i.fas.fa-minus
+      button.btn.btn-tool[type="button" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle"]
+        i.fas.fa-comments
+      - if local_assigns[:enable_close]
+        button.btn.btn-tool[type="button" data-widget="remove"]
+          i.fas.fa-times
+  .card-body
+    .direct-chat-messages
+      .direct-chat-msg
+        .direct-chat-infos.clearfix
+          span.direct-chat-name.float-left
+            | Alexander Pierce
+          span.direct-chat-timestamp.float-right
+            | 23 Jan 2:00 pm
+        img.direct-chat-img[src=account_avatar alt="message user image"]
+        .direct-chat-text
+          |  Is this template really for free? That's unbelievable! 
+      .direct-chat-msg.right
+        .direct-chat-infos.clearfix
+          span.direct-chat-name.float-right
+            | Sarah Bullock
+          span.direct-chat-timestamp.float-left
+            | 23 Jan 2:05 pm
+        img.direct-chat-img[src=account_avatar alt="message user image"]
+        .direct-chat-text
+          |  You better believe it! 
+      .direct-chat-msg
+        .direct-chat-infos.clearfix
+          span.direct-chat-name.float-left
+            | Alexander Pierce
+          span.direct-chat-timestamp.float-right
+            | 23 Jan 5:37 pm
+        img.direct-chat-img[src=account_avatar alt="message user image"]
+        .direct-chat-text
+          |  Working with AdminLTE on a great new app! Wanna join? 
+      .direct-chat-msg.right
+        .direct-chat-infos.clearfix
+          span.direct-chat-name.float-right
+            | Sarah Bullock
+          span.direct-chat-timestamp.float-left
+            | 23 Jan 6:10 pm
+        img.direct-chat-img[src=account_avatar alt="message user image"]
+        .direct-chat-text
+          |  I would love to. 
+    .direct-chat-contacts
+      ul.contacts-list
+        li
+          a[href="#"]
+            img.contacts-list-img[src=account_avatar]
+          .contacts-list-info
+            span.contacts-list-name
+              |  Count Dracula 
+              small.contacts-list-date.float-right
+                | 2/28/2015
+            span.contacts-list-msg
+              | How have you been? I was...
+        li
+          a[href="#"]
+            img.contacts-list-img[src=account_avatar]
+          .contacts-list-info
+            span.contacts-list-name
+              |  Sarah Doe 
+              small.contacts-list-date.float-right
+                | 2/23/2015
+            span.contacts-list-msg
+              | I will be waiting for...
+        li
+          a[href="#"]
+            img.contacts-list-img[src=account_avatar]
+          .contacts-list-info
+            span.contacts-list-name
+              |  Nadia Jolie 
+              small.contacts-list-date.float-right
+                | 2/20/2015
+            span.contacts-list-msg
+              | I'll call you back at...
+        li
+          a[href="#"]
+            img.contacts-list-img[src=account_avatar]
+          .contacts-list-info
+            span.contacts-list-name
+              |  Nora S. Vans 
+              small.contacts-list-date.float-right
+                | 2/10/2015
+            span.contacts-list-msg
+              | Where is your new...
+        li
+          a[href="#"]
+            img.contacts-list-img[src=account_avatar]
+          .contacts-list-info
+            span.contacts-list-name
+              |  John K. 
+              small.contacts-list-date.float-right
+                | 1/27/2015
+            span.contacts-list-msg
+              | Can I take a look at...
+        li
+          a[href="#"]
+            img.contacts-list-img[src=account_avatar]
+          .contacts-list-info
+            span.contacts-list-name
+              |  Kenneth M. 
+              small.contacts-list-date.float-right
+                | 1/4/2015
+            span.contacts-list-msg
+              | Never mind I found...
+  .card-footer
+    form[action="#" method='post']
+      .input-group
+        input.form-control.box-shadow-none[type='text' name='message' placeholder=t('chat.type_message')]
+        span.input-group-append
+          button.btn.btn-primary[type='button']
+            = t('chat.send')

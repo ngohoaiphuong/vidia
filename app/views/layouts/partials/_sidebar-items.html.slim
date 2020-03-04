@@ -1,0 +1,33 @@
+/ - @sidebar_items.each do |sidebar_item|
+/   li.nav_item
+/     a.nav-link[href=sidebar_item.url class=sidebar_item.active]
+/       i.nav-icon.fas.fa-tachometer-alt
+/       p
+/         = sidebar_item.title
+li.nav-item
+  a.nav-link[href=dashboard_index_path class=yield(:active_dashboard)]
+    i.nav-icon.fas.fa-tachometer-alt
+    p
+      = t('sidebar.dashboard.title')
+li.nav-item.has-treeview.menu-close
+  a.nav-link[href='javascript:void(0)' class=yield(:active_crm)]
+    i.nav-icon.fas.fa-users
+    p
+      = t('sidebar.crm.title')
+      i.right.fas.fa-angle-left
+  ul.nav.nav-treeview
+    li.nav-item
+      a.nav-link[href=crm_index_path class=yield(:active_crm_index)]
+        i.fas.fa-list-alt.nav-icon
+        p
+          = t('sidebar.crm.list')
+    li.nav-item
+      a.nav-link[href='./index.html']
+        i.far.fa-circle.nav-icon
+        p
+          = t('sidebar.crm.care')
+    li.nav-item
+      a.nav-link[href='./index2.html']
+        i.far.fa-circle.nav-icon
+        p
+          = t('sidebar.crm.config')

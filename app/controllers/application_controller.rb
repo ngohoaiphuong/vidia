@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   include Pagy::Backend
 
   around_action :set_locale
-  before_action :set_variant, :set_current_account, :check_secure_account
+  before_action :global_options, :set_variant, :set_current_account, :check_secure_account
 
   layout :detect_layout
 
@@ -65,4 +65,16 @@ class ApplicationController < ActionController::Base
     ActionClient.must_change_password(current_account.id) if current_account && !current_account.secure?
   end
 
+  def global_options
+    items = [
+      {
+        title: t('sidebar.dashboard.title'),
+        url: dashboard_index_path,
+        active: 'active'
+      }
+    ].to_json
+    
+    @sidebar_items = JSON.parse(items, object_class: OpenStruct)
+    p @sidebar_items
+  end
 end

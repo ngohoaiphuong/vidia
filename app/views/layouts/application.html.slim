@@ -7,6 +7,12 @@ html
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'js-routes'
-  body
-    = yield
+  body.sidebar-mini.sidebar-collapse
+    .wrapper[data-controller='application']
+      = render 'layouts/partials/main-header'
+      = render 'layouts/partials/sidebar'
+      = render 'layouts/partials/control-sidebar'
+      .content-wrapper
+        = yield
+      = render 'layouts/partials/main-footer'
     = render 'layouts/partials/tag_link'

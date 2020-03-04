@@ -13,7 +13,10 @@ vi:
     thursday: Thứ Năm
     friday: Thứ Sáu
     saturday: Thứ Bảy
-
+  more_info: Xem thêm&#127;
+  account:
+    profile: Hồ sơ
+    logout: Đăng xuất
 
 en:
   hello: "Hello world"
@@ -30,3 +33,4 @@ en:
     thursday: Thursday
     friday: Friday
     saturday: Saturday
+  more_info: More info&#127;

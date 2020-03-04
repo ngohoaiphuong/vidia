@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'crm/index'
   root 'landing#index'
 
   mount Sidekiq::Web => '/queues'
@@ -15,4 +16,5 @@ Rails.application.routes.draw do
   post '/push' => 'serviceworkers#push'
 
   resources :dashboard
+  resources :crm
 end
