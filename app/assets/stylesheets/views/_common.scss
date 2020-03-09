@@ -171,6 +171,7 @@ div[id^='__lpform'] {
 @import './animation-delay';
 @import './shadow';
 @import './image';
+@import './font-size';
 
 .section-loaded {
   animation: loaded 2s forwards;

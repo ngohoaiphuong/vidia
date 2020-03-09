@@ -1,0 +1,13 @@
+.row.mb-2
+  .col-sm-2
+    = link_to new_crm_path, class: 'btn btn-block btn-primary' do
+      i.fas.fa-plus.mr-1
+      = t('crm.new')
+  .col-sm-10
+    .float-sm-right
+      = link_to new_crm_path, class: 'btn btn-inline-block btn-success mr-2' do
+        i.far.fa-paper-plane.mr-1
+        = t('crm.export')
+      = link_to new_crm_path, class: 'btn btn-inline-block btn-secondary' do
+        i.fas.fa-paperclip.mr-1
+        = t('crm.import')

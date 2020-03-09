@@ -62,6 +62,7 @@ class ApplicationController < ActionController::Base
   end
 
   def check_secure_account
+    p current_account
     ActionClient.must_change_password(current_account.id) if current_account && !current_account.secure?
   end
 

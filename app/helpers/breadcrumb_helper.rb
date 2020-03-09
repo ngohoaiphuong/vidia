@@ -3,7 +3,7 @@ module BreadcrumbHelper
     @breadcrumbs ||= [
       {
         title: t('breadcrumb.homepage'),
-        url: root_url,
+        url: dashboard_index_path,
         icon: '<span class="fas fa-home"/>'.html_safe
       }
     ]

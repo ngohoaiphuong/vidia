@@ -20,7 +20,7 @@
 
 class ActionManagement < ApplicationRecord
   acts_as_paranoid
-  connects_to database: { writing: :general, reading: :general }
+  connects_to database: { writing: :general, reading: :general_replica }
   enum action: [
     :change_password,
     :refresh_ui

@@ -15,6 +15,6 @@
 class AppSetting < ApplicationRecord
   has_logidze
   acts_as_paranoid
-  connects_to database: { writing: :general, reading: :general }
+  connects_to database: { writing: :general, reading: :general_replica }
   has_one :welcome_setting, dependent: :destroy
 end

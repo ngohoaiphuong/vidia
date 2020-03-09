@@ -2,10 +2,12 @@ nav.main-header.navbar.navbar-expand.navbar-primary.navbar-dark
   = render 'layouts/partials/menu-items'
   / = render partial: 'layouts/partials/search', locals: { main_header: true }
   ul.navbar-nav.ml-auto
-    li.nav-item.dropdown
-      = render 'layouts/partials/comment'
-    li.nav-item.dropdown
-      = render 'layouts/partials/notification'
+    li.nav-item.dropdown[data-controller='comment']
+      #main-comment
+        = render 'layouts/partials/comment'
+    li.nav-item.dropdown[data-controller='notification']
+      #main-notification
+        = render 'layouts/partials/notification'
     li.nav-item.dropdown.user.user-menu
       = render 'layouts/partials/user-account'
 

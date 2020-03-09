@@ -1,3 +1,13 @@
 vi:
   crm:
-    index: Danh sách khách hàng
+    index: 'Danh sách khách hàng <small class="small-60">Tổng: %{total}</small>'
+    new: Tạo khách hàng
+    export: Xuất dữ liệu
+    import: Upload khách hàng
+
+en:
+  crm:
+    index: Customer list
+    new: Create customer
+    export: Export data
+    import: Upload customers

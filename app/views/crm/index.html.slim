@@ -5,10 +5,12 @@
 .section-controller
   .content-header
     .container-fluid
-      = render partial: 'shared/breadcrumb', locals: { title: t('crm.index') }
+      = render partial: 'shared/breadcrumb', locals: { title: t('crm.index', {total: 0}).html_safe }
+  .content-header
+    .container-fluid
+      = render 'crm/actions'
   section.content
     .container-fluid
       .row
         .col-sm-12
-          h1 Crm#index
-          p Find me in app/views/crm/index.html.slim
+          = render 'crm/index-detail'
