@@ -1,0 +1,7 @@
+vi:
+  dashboard:
+    title: Trang điều khiển
+    
+en:
+  dashboard:
+    title: Dashboard

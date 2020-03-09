@@ -1,0 +1,13 @@
+.row.mb-2
+  .col-sm-6
+    h1.m-0.text-dark= title
+  .col-sm-6
+    ol.breadcrumb.float-sm-right
+      - breadcrumbs.each do |breadcrumb|
+        - if breadcrumb.equal? breadcrumbs.last
+          li.breadcrumb-item.active
+            = breadcrumb[:title]
+        - else
+          li.breadcrumb-item
+            a href=(breadcrumb[:url])
+              = breadcrumb[:title]

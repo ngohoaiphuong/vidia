@@ -75,6 +75,5 @@ class ApplicationController < ActionController::Base
     ].to_json
     
     @sidebar_items = JSON.parse(items, object_class: OpenStruct)
-    p @sidebar_items
   end
 end

@@ -1,0 +1,13 @@
+vi:
+  breadcrumb:
+    homepage: Trang chủ
+    dashboard: Trang điều khiển
+    crm:
+      list: DS khách hàng
+
+en:
+  breadcrumb:
+    homepage: Home
+    dashboard: Dashboard
+    crm:
+      list: Customers list

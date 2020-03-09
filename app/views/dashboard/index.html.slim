@@ -1,6 +1,10 @@
 = content_for :active_dashboard, 'active'
+- add_breadcrumb( 'dashboard', dashboard_index_path)
 
 .section-controller
+  .content-header
+    .container-fluid
+      = render partial: 'shared/breadcrumb', locals: { title: t('dashboard.title') }
   .content-header
     .container-fluid
       .row.mb-2

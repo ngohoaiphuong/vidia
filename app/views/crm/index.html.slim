@@ -1,5 +1,14 @@
 = content_for :active_crm_index, 'active'
 = content_for :active_crm, 'active'
 
-h1 Crm#index
-p Find me in app/views/crm/index.html.slim
+- add_breadcrumb( 'crm.list', crm_index_path)
+.section-controller
+  .content-header
+    .container-fluid
+      = render partial: 'shared/breadcrumb', locals: { title: t('crm.index') }
+  section.content
+    .container-fluid
+      .row
+        .col-sm-12
+          h1 Crm#index
+          p Find me in app/views/crm/index.html.slim
