@@ -33,6 +33,7 @@
     "mixitup": "^3.3.1",
     "popper.js": "^1.16.1",
     "rails-erb-loader": "^5.5.2",
+    "rxjs": "^6.5.4",
     "slidebars": "^2.0.2",
     "smooth-scroll": "^16.1.2",
     "stimulus": "^1.1.1",

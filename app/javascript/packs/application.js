@@ -17,6 +17,9 @@ import { swRegister } from '../customs/serviceworker'
 import { NoticeMessage } from '../shared/notice_message'
 
 require('admin-lte')
+require('../customs/jsgrid')
+
+import { registerGeneralChannel } from '../channels/general_channel'
 
 document.addEventListener('DOMContentLoaded', function() {
   swRegister()
@@ -30,4 +33,6 @@ $(document).on('turbolinks:load', function () {
   $.response2Modal.init()
 
   window.notice = new NoticeMessage()
+
+  registerGeneralChannel()
 })

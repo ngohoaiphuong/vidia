@@ -1,5 +1,5 @@
 module AccountHelper
-  def current_account
+  def current_account_name
     account_signed_in? ? @current_account.username : 'Username'
   end
 

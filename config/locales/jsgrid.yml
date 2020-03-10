@@ -1,0 +1,21 @@
+vi:
+  jsgrid:
+    prev: Trang trước
+    next: Trang kế
+    first: Trang đầu
+    last: Trang cuối
+    load_message: Đang tải dữ liệu, xin chờ giây lát
+    no_data_content: Chưa có data
+    call: Gọi
+    sms: Sms
+
+en:
+  jsgrid:
+    prev: Prev
+    next: Next
+    first: First
+    last: Last
+    load_message: Đang tải dữ liệu, xin chờ giây lát
+    no_data_content: Chưa có data
+    call: Call
+    sms: Sms

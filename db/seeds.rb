@@ -69,7 +69,7 @@ end
 
 if Account.count == 0
   Account.create(
-    email: 'admin@pelo.vn',
+    email: 'admin@vidia.vn',
     username: 'administrator',
     phone_number: '0902574113',
     password: PASSWORD_DEFAULT,

@@ -5,10 +5,10 @@
 #  id           :bigint           not null, primary key
 #  action       :integer
 #  deleted_at   :datetime
-#  received     :boolean          default(FALSE)
-#  sent         :boolean          default(FALSE)
-#  sent_counter :integer          default(0)
-#  targets      :string           default([]), is an Array
+#  received     :boolean          default("false")
+#  sent         :boolean          default("false")
+#  sent_counter :integer          default("0")
+#  targets      :string           default("{}"), is an Array
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  account_id   :integer

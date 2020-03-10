@@ -2,10 +2,10 @@
 = content_for :active_crm, 'active'
 
 - add_breadcrumb( 'crm.list', crm_index_path)
-.section-controller
+.section-controller[data-controller='crm']
   .content-header
     .container-fluid
-      = render partial: 'shared/breadcrumb', locals: { title: t('crm.index', {total: 0}).html_safe }
+      = render partial: 'shared/breadcrumb', locals: { title: t('crm.index', {total: 0}).html_safe, target: 'crm.total' }
   .content-header
     .container-fluid
       = render 'crm/actions'

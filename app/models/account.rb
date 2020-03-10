@@ -8,7 +8,7 @@
 #  deleted_at             :datetime
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
-#  failed_attempts        :integer          default(0), not null
+#  failed_attempts        :integer          default("0"), not null
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :inet
 #  locked_at              :datetime
@@ -16,8 +16,8 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
-#  secure                 :boolean          default(FALSE)
-#  sign_in_count          :integer          default(0), not null
+#  secure                 :boolean          default("false")
+#  sign_in_count          :integer          default("0"), not null
 #  slug                   :string
 #  unlock_token           :string
 #  username               :string
@@ -53,6 +53,7 @@ class Account < ApplicationRecord
   has_one :user, dependent: :destroy 
 
   after_commit :set_role, on: [:create, :update]
+  after_commit :notice_changed
 
   def login_by
     @login_by || username || phone_number || email
@@ -76,5 +77,11 @@ class Account < ApplicationRecord
   private
   def set_role
     self.add_role self.default_role.to_sym if self.default_role.present?
-  end  
+  end
+
+  def notice_changed
+    ActionCable.server.broadcast 'general-channel', {
+      changed: 'account' 
+    }
+  end
 end

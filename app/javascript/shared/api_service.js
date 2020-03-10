@@ -22,6 +22,27 @@ function __post__(url, parameters) {
   })
 }
 
+function __get__(url) {
+  return new Promise((resolve, reject)  => {
+    $.get(url, response => {
+      resolve({
+        ...{
+          success: true
+        },
+        ...response
+      })
+    }).fail(e => {
+      console.log(e)
+      reject({
+        ...{
+          success: false,
+        },
+        ...e.responseJSON
+      })
+    })
+  })
+}
+
 function signIn(authenticity_token, username, password) {
   return __post__(Routes.account_session_path(), {
     authenticity_token: authenticity_token,
@@ -38,7 +59,12 @@ function updateSecure(authenticity_token, account, password) {
   })
 }
 
+function Customers() {
+  return __get__(Routes.crm_index_path('json'))
+}
+
 export {
   signIn,
-  updateSecure
+  updateSecure,
+  Customers
 }
