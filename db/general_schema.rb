@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_145739) do
+ActiveRecord::Schema.define(version: 2020_03_16_191632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -27,6 +27,18 @@ ActiveRecord::Schema.define(version: 2020_03_03_145739) do
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "deleted_at"
     t.index ["deleted_at"], name: "index_action_managements_on_deleted_at"
+  end
+
+  create_table "addresses", force: :cascade do |t|
+    t.integer "address_type", default: 0
+    t.string "code"
+    t.string "name"
+    t.integer "ghtk_id"
+    t.integer "parent_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_addresses_on_deleted_at"
   end
 
   create_table "app_settings", force: :cascade do |t|

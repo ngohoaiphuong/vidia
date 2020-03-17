@@ -20,6 +20,8 @@ require('admin-lte')
 require('../customs/jsgrid')
 
 import { registerGeneralChannel } from '../channels/general_channel'
+import { registerLocalStorage } from '../customs/storage'
+import { registerWorkers } from '../customs/workers'
 
 document.addEventListener('DOMContentLoaded', function() {
   swRegister()
@@ -35,4 +37,6 @@ $(document).on('turbolinks:load', function () {
   window.notice = new NoticeMessage()
 
   registerGeneralChannel()
+  // registerLocalStorage()
+  registerWorkers()
 })

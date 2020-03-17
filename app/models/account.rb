@@ -55,6 +55,8 @@ class Account < ApplicationRecord
   after_commit :set_role, on: [:create, :update]
   after_commit :notice_changed
 
+  accepts_nested_attributes_for :user, allow_destroy: true
+
   def login_by
     @login_by || username || phone_number || email
   end  
