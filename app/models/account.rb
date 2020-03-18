@@ -3,6 +3,7 @@
 # Table name: accounts
 #
 #  id                     :bigint           not null, primary key
+#  authentication_token   :string(30)
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :inet
 #  deleted_at             :datetime
@@ -26,6 +27,7 @@
 #
 # Indexes
 #
+#  index_accounts_on_authentication_token  (authentication_token) UNIQUE
 #  index_accounts_on_deleted_at            (deleted_at)
 #  index_accounts_on_email                 (email) UNIQUE
 #  index_accounts_on_reset_password_token  (reset_password_token) UNIQUE
@@ -34,10 +36,11 @@
 
 class Account < ApplicationRecord
   connects_to database: { writing: :primary, reading: :primary_replica }
-  extend FriendlyId
   has_logidze
   rolify
   acts_as_paranoid
+  acts_as_token_authenticatable
+  extend FriendlyId
   friendly_id :username, use: :slugged  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

@@ -1,6 +1,6 @@
 import { Controller } from 'stimulus'
 import { GridConfig } from 'shared/config_service'
-import { Customers } from 'shared/api_service'
+import { Customers, Addresses } from 'shared/api_service'
 import I18n from 'shared/locale.js.erb'
 import { LocalListening } from 'shared/local_listening'
 import { ACCOUNT_TARGET, GRID_REFRESH } from 'shared/constant'
@@ -12,6 +12,73 @@ export default class extends Controller {
   connect() {
     this.setup()
     this.listening()
+    // Addresses()().then(
+    //   response => {
+    //     console.log('cities')
+    //     console.log(response.data)
+    //     console.log('-------------------------------')
+    //   }
+    // ).catch(
+    //   error => {
+    //     console.log(error)
+    //   }
+    // )
+    // Addresses()({name: 'tp-ho-chi-minh'}).then(
+    //   response => {
+    //     console.log('city ho chi minh')
+    //     console.log(response.data)
+    //     console.log('-------------------------------')
+    //   }
+    // ).catch(
+    //   error => {
+    //     console.log(error)
+    //   }
+    // )
+    // Addresses()('tp-ho-chi-minh')().then(
+    //   response => {
+    //     console.log('distrcits')
+    //     console.log(response.data)
+    //     console.log('-------------------------------')
+    //   }
+    // ).catch(
+    //   error => {
+    //     console.log(error)
+    //   }
+    // )
+    // Addresses()('tp-ho-chi-minh')({name: 'quan-1'}).then(
+    //   response => {
+    //     console.log('district quan1')
+    //     console.log(response.data)
+    //     console.log('-------------------------------')
+    //   }
+    // ).catch(
+    //   error => {
+    //     console.log(error)
+    //   }
+    // )
+    // Addresses()('tp-ho-chi-minh')('quan-1')().then(
+    //   response => {
+    //     console.log('wards')
+    //     console.log(response.data)
+    //     console.log('-------------------------------')
+    //   }
+    // ).catch(
+    //   error => {
+    //     console.log(error)
+    //   }
+    // )
+    // Addresses()('tp-ho-chi-minh')('quan-1')({name: 'phuong-ben-nghe'}).then(
+    //   response => {
+    //     console.log('ward phuong ben nghe')
+    //     console.log(response.data)
+    //     console.log('-------------------------------')
+    //   }
+    // ).catch(
+    //   error => {
+    //     console.log(error)
+    //   }
+    // )
+
   }
   disconnect() {}
   initialize() {}

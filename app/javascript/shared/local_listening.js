@@ -9,9 +9,22 @@ function LocalListening(self_target, callback) {
         }
       }
     }
-  )
+  )  
+}
+
+function SyncLocalDBListening(callback) {
+  LocalEventService.onRequestSyncData().subscribe(
+    {
+      next: target => {
+        if(callback) {
+          callback(target)
+        }
+      }
+    }
+  )  
 }
 
 export {
-  LocalListening
+  LocalListening,
+  SyncLocalDBListening
 }

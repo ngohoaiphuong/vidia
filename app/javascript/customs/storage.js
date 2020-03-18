@@ -1,12 +1,21 @@
 import { AddressService } from '../shared/storages/address_service'
 import { RegionService } from '../shared/storages/region_service'
 
-function registerLocalStorage() {
-  let addressService = new AddressService()
-  let regionService = new RegionService()
+import { SyncLocalDBListening } from 'shared/local_listening'
 
-  addressService.run()
-  regionService.run()
+function registerLocalStorage(worker) {
+  // let addressService = new AddressService(worker)
+  // let regionService = new RegionService()
+
+  // setTimeout(addressService.run(), 1000)
+  // setTimeout(regionService.run(), 1000)
+  SyncLocalDBListening(
+    target => {
+      console.log('------------listening------------')
+      console.log(target)
+      console.log('---------------------------------')
+    }
+  )
 }
 
 export {

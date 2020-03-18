@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_064632) do
+ActiveRecord::Schema.define(version: 2020_03_17_162815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2020_03_02_064632) do
     t.datetime "deleted_at"
     t.jsonb "log_data"
     t.string "slug"
+    t.string "authentication_token", limit: 30
+    t.index ["authentication_token"], name: "index_accounts_on_authentication_token", unique: true
     t.index ["deleted_at"], name: "index_accounts_on_deleted_at"
     t.index ["email"], name: "index_accounts_on_email", unique: true
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true

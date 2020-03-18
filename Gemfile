@@ -95,3 +95,7 @@ gem 'friendly_id', '~> 5.2.4'
 
 gem 'rest-client'
 gem 'pagy'
+
+gem 'apipie-rails'
+gem 'fast_jsonapi'
+gem 'simple_token_authentication', '~> 1.0'

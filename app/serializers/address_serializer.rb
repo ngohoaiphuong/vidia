@@ -18,17 +18,7 @@
 #  index_addresses_on_deleted_at  (deleted_at)
 #  index_addresses_on_slug        (slug) UNIQUE
 #
-class Address < ApplicationRecord
-  connects_to database: { writing: :general, reading: :general_replica }
-  extend FriendlyId
-  friendly_id :code, use: :slugged  
-  enum address_type: [
-    :other,
-    :nation,
-    :city,
-    :district,
-    :ward
-  ]
-  has_many :sub_addresses, class_name: 'Address', foreign_key: 'parent_id'
-  belongs_to :main_address, class_name: 'Address', foreign_key: 'parent_id', required: false
+class AddressSerializer
+  include FastJsonapi::ObjectSerializer
+  attributes :id, :code, :name, :parent_id, :slug
 end
