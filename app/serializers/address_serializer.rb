@@ -20,5 +20,5 @@
 #
 class AddressSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :id, :code, :name, :parent_id, :slug
+  attributes :id, :code, :address_type, :name, :parent_id, :slug
 end

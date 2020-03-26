@@ -1,15 +1,16 @@
 export class Address {
-  id: number
+  id?: number
+  addressId: number
   code: string
-  address_type: string
+  addressType: string
   name: string
-  parent: number
+  parentId: number
 
-  constructor(item: any) {
-    this.id = item.id
-    this.code = item.code
-    this.address_type = item.address_type
-    this.name = item.name
-    this.parent = item.parent_id
+  constructor(addressId: number, code: string, addressType: string, name: string, parentId: number) {
+    this.addressId = addressId
+    this.code = code
+    this.addressType = addressType
+    this.name = name
+    this.parentId = parentId
   }
 }

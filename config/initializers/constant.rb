@@ -9,3 +9,5 @@ roles = {
   employee: :employee,
   accounting: :accounting
 }.each { |key, value| ACCOUNT_ROLES[key] = value } 
+
+LIMIT_RECORDS = 500

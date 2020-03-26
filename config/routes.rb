@@ -51,8 +51,10 @@ Rails.application.routes.draw do
       #   end
       # end
       namespace :addresses do
+        get :summary
+        get '/index/:address_type', action: :index
         resources :cities, only: [:index, :show] do
-          resources :districts, only: [:index, :show] do
+          resources :districts, only: [:index, :show] do            
             resources :wards, only: [:index, :show]
           end
         end

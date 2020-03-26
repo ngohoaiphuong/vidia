@@ -9,9 +9,9 @@ const _  = require('lodash')
 const APP_MAIN_DB = 'app-db-test'
 
 export class DbService extends Dexie {
-  private _regions: Dexie.Table<Region, 1>
-  private _addresses: Dexie.Table<Address, 1>
-  private _model_statuses: Dexie.Table<Address, 1>
+  protected regions: Dexie.Table<Region, 1>
+  protected addresses: Dexie.Table<Address, 1>
+  protected model_statuses: Dexie.Table<Address, 1>
 
   constructor() {
     super(APP_MAIN_DB)
@@ -20,18 +20,18 @@ export class DbService extends Dexie {
 
   private mapStore() {
     // just to storages data from server
-    this.version(1).stores({
-      _regions: '++id, name, description',
-      _addresses: '++id, code, address_type, name, parent',
-      _model_statuses: '++id, name, status'
+    this.version(5).stores({
+      regions: '++id, name, description',
+      addresses: '++id, &addressId, code, addressType, name, parentId',
+      model_statuses: '++id, name, status'
     })
     this.mapClass()
   }
 
   private mapClass = () => {
-    this._regions.mapToClass(Region)
-    this._addresses.mapToClass(Address)
-    this._model_statuses.mapToClass(ModelStatus)
+    this.regions.mapToClass(Region)
+    this.addresses.mapToClass(Address)
+    this.model_statuses.mapToClass(ModelStatus)
     this.listenOnChanges()
     this.open()
   }
@@ -42,7 +42,9 @@ export class DbService extends Dexie {
         switch (change.type) {
           // CREATED
           case 1:
-            console.log('listenOnChanges_ An object was created: ' + JSON.stringify(change.obj));
+            console.log('listenOnChanges_ An object was created: ');
+            console.log(JSON.stringify(change.obj));
+            console.log('-----------------------------------------------------------')
             break;
 
           // UPDATED
@@ -61,17 +63,5 @@ export class DbService extends Dexie {
 
   exists = () => {
     return Dexie.exists(APP_MAIN_DB)
-  }
-  
-  get regions() {
-    return this._regions
-  }
-
-  get addresses() {
-    return this._addresses
-  }
-
-  get modelStatuses() {
-    return  this._model_statuses
-  }
+  }  
 }

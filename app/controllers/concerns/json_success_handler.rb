@@ -25,11 +25,12 @@ module JsonSuccessHandler
       data = resource
     end
 
-    response[:json] ||= {
-      status: response[:status],
-      code: "OK",
-      data: data
-    }
+    # response[:json] ||= {
+    #   status: response[:status],
+    #   code: "OK",
+    #   data: data
+    # }
+    response[:json] ||= data
 
     if summary.present?
       response[:json][:summary] = summary

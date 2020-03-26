@@ -15,7 +15,7 @@ export class ModelStatusService extends DbService {
   }
 
   onDeleting = () => {    
-    this.modelStatuses.hook('deleting', function (primKey, obj, trans) {
+    this.model_statuses.hook('deleting', function (primKey, obj, trans) {
       console.log('-----------------onDeleting')
       console.log(primKey, obj, trans)
       console.log('----------------------------')
@@ -23,7 +23,7 @@ export class ModelStatusService extends DbService {
   }
 
   onCreating = () => {    
-    this.modelStatuses.hook('creating', function (primKey, obj, trans) {
+    this.model_statuses.hook('creating', function (primKey, obj, trans) {
       console.log('-----------------onCreating')
       console.log(primKey, obj, trans)
       console.log('----------------------------')
@@ -31,7 +31,7 @@ export class ModelStatusService extends DbService {
   }
 
   onUpdating = () => {    
-    this.modelStatuses.hook('updating', function (modifications, primKey, obj, trans) {
+    this.model_statuses.hook('updating', function (modifications, primKey, obj, trans) {
       console.log('-----------------onUpdating')
       console.log(modifications, primKey, obj, trans)
       console.log('----------------------------')
@@ -39,7 +39,7 @@ export class ModelStatusService extends DbService {
   }
 
   onReading = () => {    
-    this.modelStatuses.hook('reading', function (obj) {
+    this.model_statuses.hook('reading', function (obj) {
       console.log('-----------------onReading')
       console.log(obj)
       console.log('----------------------------')

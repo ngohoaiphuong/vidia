@@ -54,16 +54,10 @@ function ___fetch___(url, resolve, reject) {
     if (xhr.readyState !== 4) return;
     if (xhr.status === 200) {
       resolve({
-        ...{
-          success: true
-        },
         ...JSON.parse(xhr.response)
       })
     } else {
       reject({
-        ...{
-          success: false,
-        },
         ...xhr.statusText
       })
     }
