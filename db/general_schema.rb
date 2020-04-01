@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_17_180655) do
+ActiveRecord::Schema.define(version: 2020_04_01_111405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -34,11 +34,12 @@ ActiveRecord::Schema.define(version: 2020_03_17_180655) do
     t.string "code"
     t.string "name"
     t.integer "ghtk_id"
-    t.integer "parent_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "deleted_at"
     t.string "slug"
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_addresses_on_ancestry"
     t.index ["deleted_at"], name: "index_addresses_on_deleted_at"
     t.index ["slug"], name: "index_addresses_on_slug", unique: true
   end

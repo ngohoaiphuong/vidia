@@ -68,6 +68,8 @@ group :development do
   gem 'letter_opener'
   gem 'rails-erd'
   gem 'puma-ngrok-tunnel'
+  gem 'awesome_print', require: 'ap'
+  gem 'hirb'
 end
 
 gem 'slim-rails'
@@ -99,3 +101,5 @@ gem 'pagy'
 gem 'apipie-rails'
 gem 'fast_jsonapi'
 gem 'simple_token_authentication', '~> 1.0'
+
+gem 'ancestry'
